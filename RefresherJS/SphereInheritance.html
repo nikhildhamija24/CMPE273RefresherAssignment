@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Area Volume Inheritance</title>
+<script>
+	var ar = document.getElementById("area1");
+	var vol = document.getElementById("vol1");
+	function sphereArea(){
+	}	
+	sphereArea.prototype.area = function(r){
+		return 4*Math.PI*r*r;
+	}
+	var obj = new sphereArea();
+	document.write("Calculate the Area and Volume of sphere");
+	document.write("<br> <br>")
+	document.write("Area=" + obj.area(4));
+	
+	function sphereVolume(){
+	}
+	sphereVolume.prototype = new sphereArea();
+	
+	sphereVolume.prototype.volume = function (r){
+		tmp = sphereVolume.prototype.area(r)*r /3
+		return tmp;
+	}
+	
+	var obj1 = new sphereVolume();
+	obj1.area(4);
+	document.write("<br> <br> Volume=" +obj1.volume(4));
+	
+</script>
+</head>
+<body>
+	
+
+</body>
+</html>

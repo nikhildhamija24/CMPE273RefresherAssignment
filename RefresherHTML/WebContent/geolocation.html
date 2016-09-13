@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Distance</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center"> Check how far you are from North Pole</h3>
+		</header>
+	</article>
+	
+	<div>
+		<button type="button" onclick="getDistance()">Check</button>
+	</div>
+	<br>
+	<p id = "op"></p>
+
+<script>
+	z = document.getElementById("op");
+	var Nlat = 80.4;
+	var Nlong = 72.7;
+	function distance(lat1,lon1,lat2,lon2) {
+		
+		  R = 6371e3
+		  x = toRad(lat1)
+		  y = toRad(lat2)
+		  dLat = toRad(lat2-lat1)
+		  dLon = toRad(lon2-lon1); 
+		  var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(x) * Math.cos(y) * Math.sin(dLon/2) * Math.sin(dLon/2);
+		  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+		  var d = R * c
+		  return d;
+		}
+	
+		function toRad(deg) {
+			return deg*Math.PI / 180;
+		}
+	
+	
+	function getDistance(){
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(searchLocation);
+		}else{
+			z.innerHTML = "Geolocation not supported!"
+		}
+	}
+	
+	function searchLocation(position){
+		lat = position.coords.latitude
+		lon = position.coords.longitude
+		fd = distance(lat, lon, 80.4, 72.7);
+		//alert("Distance: "+ fd)
+		z.innerHTML = "You are standing "+ fd + " meters away from North Pole";
+	}
+</script>
+
+</body>
+</html>

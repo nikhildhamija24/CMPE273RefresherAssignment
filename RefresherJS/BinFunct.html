@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Binary</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center"> Get Binary</h3>
+		</header>
+	</article>
+	<div>
+		<input type="number" id="val"/>
+	</div>
+	<div>
+	
+		<p>Click below to get binary representation:</p>
+		<input type="button" onclick="binary()" value="Get Binary"/>
+		<p id="output"></p>
+		<script>
+			function binary(){	
+				var x = document.getElementById("val").value;
+				var y = (x >>> 0).toString(2);					
+				document.getElementById("output").innerHTML = y;										
+			}
+		</script>		
+	</div>
+</body>
+</html>

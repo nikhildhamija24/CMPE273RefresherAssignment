@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SearchEngine</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center">Enter the text to search</h3>
+		</header>
+	</article>
+	<div>
+		<input type="text" id="term"/>
+	</div>
+	<br>
+	<div>
+		<p id="serch">Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects.
+		 These patterns are used with the exec and test methods of RegExp,
+		 and with the match , replace , search , and split methods of String</p>
+	</div>
+	<br>
+	<input type="button" onclick="search()" value="Search"/>
+	
+	<p id="demo"></p>
+	
+	<script>
+		function search(){
+			var ter = document.getElementById("term").value;
+			var patt = new RegExp(ter);
+			var searchText = document.getElementById("serch").innerHTML;
+			document.getElementById("demo").innerHTML = patt.test(searchText);
+		}
+	</script>
+
+</body>
+</html>

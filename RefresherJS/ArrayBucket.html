@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Your Fruit Bucket</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center">Fruit Bucket</h3>
+		</header>
+	</article>
+
+	<div>
+		<input type="text" id="element"/>
+	</div>
+	<p>Add fruits to your Bucket</p>
+	<div>
+		<button onclick="addMethod()">Add</button>
+	</div>
+	<p>Bucket:</p>
+	<p id="display"></p>
+	
+	<script>
+		var arr =[];
+		function addMethod(){
+			var ele = document.getElementById("element").value;			
+			arr.push(ele);
+			document.getElementById("display").innerHTML = arr.toString();
+		}		
+	</script>
+
+</body>
+</html>

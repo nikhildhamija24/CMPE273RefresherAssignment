@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Voting rights</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center">Are you Allowed to vote yet</h3>
+		</header>
+	</article>
+	<div>
+	What's your age: <br><input type="text" id="vt"/>
+	</div>
+	<br></br>
+	<input type="button" onclick="check()" value="Check"/>
+	<br>
+	<div>
+		<p id="out"></p>
+	</div>
+	
+	<script>		
+		var check = function(){
+			var a = document.getElementById("vt").value;
+			var age = parseInt(a);
+			if(age >= 18){
+				document.getElementById("out").innerHTML="Please go ahead and make use of your vote!";
+			}else{
+				var ageDif = 18-age;
+				document.getElementById("out").innerHTML="You gotta wait for " + ageDif +" more years to vote.";
+			}
+		}
+	</script>
+</body>
+</html>

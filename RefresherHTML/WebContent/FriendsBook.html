@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Friendsbook</title>
+<script>
+	function save(){
+		var name = document.getElementById("name").value;
+		var phone = document.getElementById("phnnum").value;
+		localStorage.setItem(name, phone);
+		search();
+	}
+	function search(){
+		var show = document.getElementById("contacts");
+		var fname = ""; var fcontact ="";
+		var data = "";
+		for(var i=0; i<localStorage.length; i++){
+			fname = localStorage.key(i);
+			fcontact = localStorage.getItem(fname);
+			data += "<b>"+fname+"</b>" + " - " + fcontact + "</br>";
+		}
+		show.innerHTML = data;  
+	}
+</script>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center">Your Phone Directory</h3>
+		</header>
+	</article>
+	
+	<div>
+		<div class="form-group" style="clear: left;">
+			<div>
+				Friend  Name <input type="text" id="name"/>
+			</div>
+			<br>
+			<div>
+				Friend Phone <input type="text" id="phnnum"/>
+			</div>
+			<br>
+		</div>
+		<div>
+			<input type="button" onclick="save()" value="Save"/>
+		</div>
+		
+		<div style="float:left; clear:left;">
+			<h3>Contacts</h3>
+			<p id="contacts"></p>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Card Details</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center">Enter your Card details here</h3>
+		</header>
+	</article>
+	<div>
+		Card Number:<input type="number" id="ccn">
+	</div><br>
+	<div>
+		Expiry Date:<input type="date" id="dd">
+	</div><br>
+	<div>
+		First Name :<input type="text" id="fname">
+	</div><br>
+	<div>
+		Last Name  :<input type="text" id="lname">
+	</div><br>
+	<div>
+		<input type="button" onclick="cc()" value=Submit>
+	</div><br>
+	<div>
+		<p id="op"></p>
+	</div>
+	<script>
+		function cc(){
+			var crdnum = document.getElementById("ccn").value;
+			var ccdate = document.getElementById("dd").value;
+			var message = document.getElementById("op");
+			message.innerHTML = "";
+			try{
+				var x = parseInt(crdnum);
+				if(x.toString().length > 16 || x.toString().length < 16){
+					throw "Invalid credit card number"; 
+				}
+			}catch (e) {
+				message.innerHTML = "Error: " + e + ".";
+			}
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TypeConversions</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center">Type Conversions</h3>
+		</header>
+	</article>
+	<div>
+		Enter value: <input type="text" id="inp"/><br>
+		<button type="submit" value="Check" onclick="myfunct()">Check</button><br>
+		<p id="outp"></p>
+	</div>
+	<div>
+		Text <input type="text" id="txt"/> + Number <input type="text" id="num"/>
+		<button type="submit" value="Add" onclick="sum()">AutoConvAdd</button>
+		<p id="sumop"></p>
+	</div>
+	<div>
+		Number <input type="text" id="txt1"/> + Number <input type="text" id="num1"/>
+		<button type="submit" value="Add" onclick="sumW()">ExplicitAdd</button>
+		<p id="sumop1"></p>
+	</div>
+	<script>
+		function myfunct(){
+			var str = document.getElementById("inp").value;
+			document.getElementById("outp").innerHTML = str.charCodeAt(0);
+		}
+		function sum(){
+			var str = document.getElementById("txt").value;
+			var it = document.getElementById("num").value;
+			document.getElementById("sumop").innerHTML = str + it;
+		}
+		function sumW(){
+			var str = document.getElementById("txt1").value;
+			var it = document.getElementById("num1").value;
+			document.getElementById("sumop1").innerHTML = str + it;
+		}
+	</script>
+	
+	
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calorie consumption</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center"> Calculate your calories consumed today</h3>
+		</header>
+	</article>
+	<p>Select the source and destination of your walk</p>
+	<p>Source:</p>
+	<div>	
+		<select id="s">
+			<option value="Library">Library</option>
+			<option value="Student Health Services">Student Health Services</option>
+			<option value="Macguire Hall">Macguire Hall</option>		
+		</select>
+	</div>
+		<p>Destination:<p>
+	<div>		
+			<select id="d">
+				<option value="Student Union">Student Union</option>
+				<option value="Boccardo Business Center">Boccardo Business Center</option>
+				<option value="South Garage">South Garage</option>
+			</select>
+	</div>
+	<br>
+	<button id="btn" onclick="calculate()">Calculate</button>
+	<script>		
+		var num1, num2, sum;
+		var source = {
+			"Library" : 100,
+			"Student Health Services" : 200,
+			"Macguire Hall": 70
+		}
+		var destination = {
+			"Student Union" : 100,
+			"Boccardo Business Center" : 300,
+			"South Garage" : 120
+		}
+		function calculate(){	
+			var src = document.getElementById("s").value;	
+			var dest = document.getElementById("d").value;
+			num1 = parseInt(source[src]);
+			num2 = parseInt(destination[dest]);
+			sum = num1 + num2;
+			alert("You have consumed "+sum+" calories today!")
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Strict Mode example</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center">Catch the strict mode</h3>
+		</header>
+	</article>
+	<div>
+		<p id="txt">Here I am going to show how the strict mode will cause an error</p>
+	</div>
+	<input type="button" onclick="myDemo()" value="CheckError"/>
+	<p id="demo"></p>
+	<script>
+		function myDemo(){
+			"use strict";
+			var message = document.getElementById("demo");
+			try{
+				x=54;
+				y=60;
+			}catch(e) {
+				message.innerHTML = e;
+			}
+		}
+	</script>
+	
+
+</body>
+</html>

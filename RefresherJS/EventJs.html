@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Time Zones</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center">
+				Check Your Timezones
+			</h3>
+		</header>
+	</article>
+	<div>
+		<button onclick="myOverFunction()">PST(Pacific Standard Time)</button>		
+	</div>
+	<br>
+	<div>
+		<button onclick="convertToEST()">EST(Eastern Standard Time)</button>		
+	</div>	
+	<br>
+	<div>
+		<button onclick="convertToIST()">IST(Indian Standard Time)</button>		
+	</div>
+	<br>
+	<div>
+		<button onclick="convertToACT()">ACT(Australian Central Time)</button>		
+	</div>
+	
+	<script>
+		function myOverFunction(){
+			var local = new Date();
+			alert(local.toLocaleString());
+		}
+		function convertToEST(){
+			offset = -5.0;
+			local = new Date();
+			var est = local.getTime() + (local.getTimezoneOffset() * 60000);
+			
+			var serverDate = new Date(est + (3600000 * offset));
+			alert(serverDate.toLocaleString());
+		}
+		function convertToIST(){
+			offset = +5.30;
+			local = new Date();
+			var est = local.getTime() + (local.getTimezoneOffset() * 60000);
+			
+			var serverDate = new Date(est + (3600000 * offset));
+			alert(serverDate.toLocaleString());
+		}
+		function convertToACT(){
+			offset = +10.30;
+			local = new Date();
+			var est = local.getTime() + (local.getTimezoneOffset() * 60000);
+			
+			var serverDate = new Date(est + (3600000 * offset));
+			alert(serverDate.toLocaleString());
+		}
+	</script>
+</body>
+</html>

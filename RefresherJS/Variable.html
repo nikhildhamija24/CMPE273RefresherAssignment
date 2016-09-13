@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fortune Teller</title>
+</head>
+<body>
+	<article>
+		<header>
+			<h3 align="center">
+				Look what fortune cookie has for you today
+			</h3>
+		</header>
+	</article>
+<div>
+	<p>Enter a number between 0-10</p>
+	Number <input type="number" id="num1"/>
+</div>
+<br>
+<div>
+	<input type = "button" value="Click here" onclick="fortune()"/>
+	<script>
+		function fortune(){
+			var arr = ["Today its up to you to create the peacefulness you long for",
+			           "If you refuse to accept anything but the best, you very often get it",
+			           "A smile is your passport into the heart of others",
+			           "Hardwork pays off in the future, laziness pays off now",
+			           "Your high-minded principles spell off success",
+			           "Your shoes will make you happy today",
+			           "Land is always on the mind of the flying bird",
+			           "The man or the woman you desire feels the same about you",
+			           "Be on the outlook for coming events; They cast their shadow beforehand",
+			           "A dream you have will come true",
+			           "Never give up. You are not a failure if you don't give up"];
+			
+			var input = document.getElementById("num1").value;
+			
+			alert("Your Fourtune says:" + "\n"+ arr[input]);
+		}
+	</script>
+</div>
+
+</body>
+</html>
