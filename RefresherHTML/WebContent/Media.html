@@ -3,6 +3,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Mp3World</title>
+<script>
+	function audioShift(){
+		var as = document.getElementById("as");
+		if(as.src == "beep36.mp3"){
+			as.src = "beep27.mp3";
+			as.load();
+		}else{
+			as.src = "beep36.mp3";
+			as.load();
+		}
+	}
+	
+	function videoShift(){
+		var vs = document.getElementById("vs");
+		if(vs.src == "Waterfall.mp4"){
+			vs.src = "Bird.mp4";
+			vs.load();
+		}else{
+			vs.src = "Waterfall.mp4";
+			vs.load();
+		}
+	}
+</script>
+
 </head>
 <body>
 	<article>
@@ -12,7 +36,14 @@
 	</article>
 	
 	<div>
-		<audio src="D:/Grad School/SJSU_Sem3/CMPE-273/menu.wav" controls></audio>
+		<audio src="beep36.mp3" id="as" controls></audio>
+		<br>
+		<input type="button" value="Next Song" onclick="audioShift()"/>
+	</div>
+	<br>
+	<div>
+		<video src="Waterfall.mp4" id="vs" controls width="320" height="320"></video>
+		<input type="button" value="Next Song" onclick="videoShift()"/>
 	</div>
 </body>
 </html>

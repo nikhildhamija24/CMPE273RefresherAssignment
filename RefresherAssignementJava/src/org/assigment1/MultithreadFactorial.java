@@ -24,7 +24,6 @@ public class MultithreadFactorial implements Callable<Integer> {
 		}else{
 			for(int i=2; i<=integer; i++){
 				factorial *= i;
-				Thread.sleep(500);
 			}
 		}
 		return factorial;
@@ -46,6 +45,7 @@ public class MultithreadFactorial implements Callable<Integer> {
 		for(Future<Integer> fut : fact){
 			try {
 				System.out.println("Future result is: "+ fut.get() + " and task done is "+fut.isDone());
+				Thread.sleep(500);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
